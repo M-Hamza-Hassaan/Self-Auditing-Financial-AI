@@ -1,1 +1,1 @@
-# -Chess-With-Ai.
+# Chess-With-Ai.
