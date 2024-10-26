@@ -1,11 +1,11 @@
 import React from 'react';
-import Format from './Pages/Format/Format';
+// import Format from './Pages/Format/Format';
+import Navbar from './Pages/Navbar/Navbar';
 
 function App() {
   return (
     <div>
-      <h1>THIS IS THE CHESS AI APP</h1>
-      <Format />
+      <Navbar />
     </div>
   );
 }
