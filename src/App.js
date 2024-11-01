@@ -1,11 +1,10 @@
 import React from 'react';
-// import Format from './Pages/Format/Format';
-import Navbar from './Pages/Navbar/Navbar';
+import Format from './Pages/Format/Format';
 
 function App() {
   return (
     <div>
-      <Navbar />
+      <Format />
     </div>
   );
 }
