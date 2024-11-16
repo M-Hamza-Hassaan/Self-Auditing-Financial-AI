@@ -1,10 +1,11 @@
 import React from 'react';
-import Format from './Pages/Format/Format';
-
+import Navbar from './pages/Navbar/Navbar';
+import Chatbot from './pages/Chatbot/Chatbot';
 function App() {
   return (
     <div>
-      <Format />
+      <Navbar />
+      <Chatbot />
     </div>
   );
 }
