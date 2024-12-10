@@ -1,0 +1,51 @@
+.refinements-section {
+    margin: 20px;
+    padding: 20px;
+    background: linear-gradient(135deg, #1f1c2c, #928dab);
+    border-radius: 12px;
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+    color: #fff;
+    font-family: "Poppins", sans-serif;
+    text-align: center;
+}
+
+.refinements-section input,
+.refinements-section button {
+    display: inline-block;
+    margin: 10px;
+    padding: 12px 20px;
+    border: none;
+    border-radius: 25px;
+    font-size: 16px;
+    font-family: "Poppins", sans-serif;
+    outline: none;
+    transition: all 0.3s ease-in-out;
+}
+
+.refinements-section input {
+    background-color: rgba(255, 255, 255, 0.2);
+    color: #fff;
+    border: 1px solid rgba(255, 255, 255, 0.5);
+    text-align: center;
+}
+
+.refinements-section input:focus {
+    border-color: #ff8c00;
+    box-shadow: 0 0 10px #ff8c00;
+}
+
+.refinements-section button {
+    background: linear-gradient(135deg, #ff8c00, #f021b2);
+    color: #fff;
+    cursor: pointer;
+    box-shadow: 0 5px 15px rgba(255, 140, 0, 0.3);
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.refinements-section button:hover {
+    background: linear-gradient(135deg, #f021b2, #ff8c00);
+    transform: translateY(-3px);
+    box-shadow: 0 8px 20px rgba(240, 33, 178, 0.4);
+}
+
