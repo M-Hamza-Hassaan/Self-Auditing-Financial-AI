@@ -9,7 +9,7 @@ A full-stack solution demonstrating a Trustworthy AI approach built with the Bee
 ## Overview
 
 Modern AI systems can transform business operations, but they also introduce risks such as bias, errors, and security vulnerabilities. Our solution tackles these challenges by integrating multiple layers of governance into an AI-driven loan approval system. We leverage IBM Granite models (via the Ollama provider) along with BeeAI’s modular components—including governance agents, prompt templates, memory, workflows, and ReAct agents—to build a system that is:
-  
+
 - **Safe & Controlled:** Monitors for bias and anomalies.
 - **Ethically Aligned:** Ensures decisions adhere to ethical guidelines.
 - **Regulatory Compliant:** Audits decisions against financial and legal standards.
@@ -27,7 +27,7 @@ This project was developed for a hackathon challenge with the following key obje
   - *EthicsAgent*: Reviews decision criteria to ensure ethical fairness.  
   - *ComplianceAgent*: Audits decisions for regulatory compliance.  
   - *HumanCollaborationAgent*: Facilitates human review and override when necessary.
-  
+
 - **Prompt Templates:** Dynamically generate prompts using BeeAI’s templating system.
 - **IBM Granite Integration:** Interact with IBM Granite models for high-quality responses.
 - **Memory & Workflows:** Retain conversation history and automate multi-step processes.
@@ -107,11 +107,11 @@ This diagram shows how a user's loan application flows through the system, with 
 ## Prerequisites
 
 - **Python 3.8+**  
-- **Dependencies:**  
+- **Dependencies:**  
   Install using:
-  ```bash
-  pip install -r requirements.txt
+
   ```
+  pip install -r requirements.txt
 - **BeeAI Framework:** Ensure that BeeAI and its dependencies are installed.
 - **IBM Granite (Ollama Provider):** Configure your environment for IBM Granite (see [IBM Granite documentation](https://www.ibm.com/granite/docs) for details).
 - **SearXNG (Optional):** For web search integration, have a running SearXNG instance.
@@ -120,14 +120,17 @@ This diagram shows how a user's loan application flows through the system, with 
 
 1. **Clone the Repository:**
 
-   ```bash
+
+
+```bash
    git clone [https://github.com/ruslanmv/ai-governance-framework.git](https://github.com/ruslanmv/ai-governance-framework.git)
    cd ai-governance-framework
-   ```
+```
+
 2. **Install Dependencies:**
 
-   ```bash
-   pip install -r requirements.txt
+   ```bash
+pip install -r requirements.txt
    ```
 
 ## Usage
@@ -135,18 +138,21 @@ This diagram shows how a user's loan application flows through the system, with 
 - **Run the Main Application:**  
   The main entry point runs both a ChatModel demo and the end-to-end loan approval workflow.
 
-  ```bash
+
+
+```
   python src/main.py
+```
+
+- **Interactive Workflow:**  
+
+    During execution, the system will prompt for human review input when necessary (simulate human oversight).
+
+- **Test ReAct Agents:**  
+  To run the ReAct agent demonstration separately:
+
   ```
-
-- **Interactive Workflow:**  
-  During execution, the system will prompt for human review input when necessary (simulate human oversight).
-
-- **Test ReAct Agents:**  
-  To run the ReAct agent demonstration separately:
-
-  ```bash
-  python src/react_agents.py
+python src/react_agents.py
   ```
 
 ## Contributing
