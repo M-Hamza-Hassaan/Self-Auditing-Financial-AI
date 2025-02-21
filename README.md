@@ -112,6 +112,7 @@ This diagram shows how a user's loan application flows through the system, with 
 
   ```
   pip install -r requirements.txt
+  ```
 - **BeeAI Framework:** Ensure that BeeAI and its dependencies are installed.
 - **IBM Granite (Ollama Provider):** Configure your environment for IBM Granite (see [IBM Granite documentation](https://www.ibm.com/granite/docs) for details).
 - **SearXNG (Optional):** For web search integration, have a running SearXNG instance.
