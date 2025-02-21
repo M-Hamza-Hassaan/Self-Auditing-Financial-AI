@@ -121,25 +121,24 @@ This diagram shows how a user's loan application flows through the system, with 
 
 1. **Clone the Repository:**
 
-
-
-```bash
+   ```
    git clone [https://github.com/ruslanmv/ai-governance-framework.git](https://github.com/ruslanmv/ai-governance-framework.git)
+   ```
+
+   ```
    cd ai-governance-framework
-```
+   ```
 
 2. **Install Dependencies:**
 
-   ```bash
-pip install -r requirements.txt
+   ```
+   pip install -r requirements.txt
    ```
 
 ## Usage
 
-- **Run the Main Application:**  
+- **Run the Main Application:**  
   The main entry point runs both a ChatModel demo and the end-to-end loan approval workflow.
-
-
 
 ```
   python src/main.py
@@ -153,7 +152,7 @@ pip install -r requirements.txt
   To run the ReAct agent demonstration separately:
 
   ```
-python src/react_agents.py
+  python src/react_agents.py
   ```
 
 ## Contributing
