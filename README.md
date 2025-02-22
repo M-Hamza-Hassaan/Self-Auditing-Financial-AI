@@ -2,8 +2,7 @@
 
 This project addresses the critical challenges posed by modern AI systems: the risks of bias, errors, security threats, ethical dilemmas, and ineffective human-AI collaboration. To mitigate these risks, we introduce the AI Governance Framework, a layered solution deploying specialized Governance & Safety Agents. This framework offers comprehensive, proactive oversight, ensuring AI systems are not only technically robust but also ethically aligned and regulatory compliant. Our unique approach integrates technical safety with ethical, regulatory, and collaborative measures, systematically managing potential risks to build trustworthy AI applications, as demonstrated in our AI-Driven Loan Approval System use case.
 
-## Use Case: Trustworthy AI Loan Approval System
-
+## Use Case: Self-Auditing Financial AI
 A full-stack solution demonstrating a Trustworthy AI approach built with the BeeAI Framework and IBM Granite models. This project implements a comprehensive Safety and Governance layer to automate and secure the loan approval process while ensuring ethical and regulatory compliance.
 
 ## Overview
