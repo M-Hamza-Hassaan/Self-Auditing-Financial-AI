@@ -1,0 +1,3 @@
+beeai-framework
+pydantic>=1.8
+langchain-community

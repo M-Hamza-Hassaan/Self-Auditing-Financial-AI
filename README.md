@@ -1,66 +1,167 @@
-## Available Scripts
+# AI Governance Framework
 
-In the project directory, you can run:
+This project addresses the critical challenges posed by modern AI systems: the risks of bias, errors, security threats, ethical dilemmas, and ineffective human-AI collaboration. To mitigate these risks, we introduce the AI Governance Framework, a layered solution deploying specialized Governance & Safety Agents. This framework offers comprehensive, proactive oversight, ensuring AI systems are not only technically robust but also ethically aligned and regulatory compliant. Our unique approach integrates technical safety with ethical, regulatory, and collaborative measures, systematically managing potential risks to build trustworthy AI applications, as demonstrated in our AI-Driven Loan Approval System use case.
 
-### `npm start`
+## Use Case: Self-Auditing Financial AI
+A full-stack solution demonstrating a Trustworthy AI approach built with the BeeAI Framework and IBM Granite models. This project implements a comprehensive Safety and Governance layer to automate and secure the loan approval process while ensuring ethical and regulatory compliance.
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+## Overview
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+Modern AI systems can transform business operations, but they also introduce risks such as bias, errors, and security vulnerabilities. Our solution tackles these challenges by integrating multiple layers of governance into an AI-driven loan approval system. We leverage IBM Granite models (via the Ollama provider) along with BeeAI’s modular components—including governance agents, prompt templates, memory, workflows, and ReAct agents—to build a system that is:
 
-### `npm test`
+- **Safe & Controlled:** Monitors for bias and anomalies.
+- **Ethically Aligned:** Ensures decisions adhere to ethical guidelines.
+- **Regulatory Compliant:** Audits decisions against financial and legal standards.
+- **Collaborative:** Enables human oversight to override AI decisions when necessary.
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+This project was developed for a hackathon challenge with the following key objectives:
+- **Harness IBM Granite Models:** Utilize IBM Granite’s advanced language modeling for business applications.
+- **Focus on Efficiency:** Automate workflows to optimize operations and improve productivity.
+- **Innovate for Impact:** Deliver a groundbreaking solution that revolutionizes business processes in the financial sector.
 
-### `npm run build`
+## Features
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+- **Governance Agents:**  
+  - *SafetyControlAgent*: Monitors loan application data for bias.  
+  - *EthicsAgent*: Reviews decision criteria to ensure ethical fairness.  
+  - *ComplianceAgent*: Audits decisions for regulatory compliance.  
+  - *HumanCollaborationAgent*: Facilitates human review and override when necessary.
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+- **Prompt Templates:** Dynamically generate prompts using BeeAI’s templating system.
+- **IBM Granite Integration:** Interact with IBM Granite models for high-quality responses.
+- **Memory & Workflows:** Retain conversation history and automate multi-step processes.
+- **ReAct Agents:** Enable intelligent reasoning and actions for dynamic decision making.
+- **Modular Architecture:** Clean, scalable, and well-organized code structure.
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+## File Structure
 
-### `npm run eject`
+```
+ai-governance-framework/
+├── README.md
+├── LICENSE
+├── requirements.txt
+├── hackathon_presentation.md
+├── .gitignore
+├── docs/
+│   ├── tutorial.md
+│   └── architecture_diagram.png
+└── src/
+    ├── __init__.py
+    ├── main.py
+    ├── agents.py
+    ├── governance.py
+    ├── prompt_templates.py
+    ├── chat_model_examples.py
+    ├── workflows.py
+    └── react_agents.py
+```
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+- **README.md:** Project overview, setup, usage, and other key details.
+- **LICENSE:** Project license (MIT License recommended).
+- **requirements.txt:** Python dependencies.
+- **hackathon_presentation.md:** Pitch and presentation details for the hackathon.
+- **docs/tutorial.md:** Detailed tutorial and documentation.
+- **docs/architecture_diagram.png:** Visual representation of the system architecture.
+- **src/**: Contains all the source code modules.
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+## Architecture
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+```mermaid
+flowchart TD
+    A[User / Client] --> B[Loan Application Interface]
+    B --> C[Workflow Engine]
+    
+    subgraph Governance & Safety Layer
+        D1[Safety & Control Agent]
+        D2[Ethics & Responsible AI Agent]
+        D3[Compliance Agent]
+        D4[Human-AI Collaboration Agent]
+    end
+    
+    C --> D[Governance & Safety Layer]
+    D --> D1
+    D --> D2
+    D --> D3
+    D --> D4
+    
+    C --> E[IBM Granite ChatModel]
+    E --> F[Prompt Templates]
+    E --> G[Memory Module]
+    C --> H[ReAct Agent]
+    
+    E --> I[Decision Output]
+    D1 -.-> I
+    D2 -.-> I
+    D3 -.-> I
+    D4 -.-> I
+    H --> E
+    F --> E
+    H --> I
+```
 
-## Learn More
+This diagram shows how a user's loan application flows through the system, with the Workflow Engine coordinating interactions between the Governance & Safety Layer (which includes the key agents), the IBM Granite ChatModel (enhanced with prompt templates and memory), and the ReAct agent to produce a final decision output.
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+## Prerequisites
 
-### Code Splitting
+- **Python 3.8+**  
+- **Dependencies:**  
+  Install using:
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+  ```
+  pip install -r requirements.txt
+  ```
+- **BeeAI Framework:** Ensure that BeeAI and its dependencies are installed.
+- **IBM Granite (Ollama Provider):** Configure your environment for IBM Granite (see [IBM Granite documentation](https://www.ibm.com/granite/docs) for details).
+- **SearXNG (Optional):** For web search integration, have a running SearXNG instance.
 
-### Analyzing the Bundle Size
+## Installation
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+1. **Clone the Repository:**
 
-### Making a Progressive Web App
+   ```
+   git clone [https://github.com/ruslanmv/ai-governance-framework.git](https://github.com/ruslanmv/ai-governance-framework.git)
+   ```
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+   ```
+   cd ai-governance-framework
+   ```
 
-### Advanced Configuration
+2. **Install Dependencies:**
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
+   ```
+   pip install -r requirements.txt
+   ```
 
-### Deployment
+## Usage
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
+- **Run the Main Application:**  
+  The main entry point runs both a ChatModel demo and the end-to-end loan approval workflow.
 
-### `npm run build` fails to minify
+```
+  python src/main.py
+```
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+- **Interactive Workflow:**  
+
+    During execution, the system will prompt for human review input when necessary (simulate human oversight).
+
+- **Test ReAct Agents:**  
+  To run the ReAct agent demonstration separately:
+
+  ```
+  python src/react_agents.py
+  ```
+
+## Contributing
+
+Contributions are welcome! Feel free to fork the repository and submit pull requests. For major changes, please open an issue first to discuss your ideas.
+
+## License
+
+This project is licensed under the MIT License. See the [LICENSE](LICENSE) file for details.
+
+## Acknowledgements
+
+We thank our contributors, the BeeAI community, and IBM Granite for providing the powerful tools that made this project possible. Special thanks to everyone who supported this hackathon initiative.
