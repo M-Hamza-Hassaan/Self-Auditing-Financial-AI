@@ -192,7 +192,7 @@ ollama run granite3.1-dense:8b
 
 1.  Launch the Flask client:
     ```bash
-    python src/client.py
+    python client.py
     ```
 2.  Submit loan applications through the web interface.
 
