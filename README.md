@@ -6,6 +6,8 @@ This project addresses the critical challenges posed by modern AI systems: bias,
 
 Our solution is a full-stack demonstration of a Trustworthy AI approach built with the BeeAI Framework and IBM Granite models. It integrates a comprehensive Safety and Governance layer to automate and secure the loan approval process.
 
+
+
 ## Overview
 
 Modern AI systems can revolutionize business operations but also introduce risks like bias, errors, and security vulnerabilities. Our solution integrates multiple layers of governance into an AI-driven loan approval system by leveraging:
@@ -22,9 +24,11 @@ The system is designed to be:
 
 ### Key Objectives
 
-*   **Harness IBM Granite Models:** Utilize cutting-edge language modeling for business applications.
-*   **Optimize Efficiency:** Automate workflows to enhance productivity.
-*   **Drive Innovation:** Deliver a transformative solution for the financial sector.
+**Challenge Objectives:**
+
+- **Harness IBM Granite Models:** Integrate IBM Granite’s capabilities into our AI solution to tailor it for real-world business applications.
+- **Focus on Efficiency:** Automate workflows, optimize operations, and improve productivity.
+- **Innovate for Impact:** Create a groundbreaking solution that revolutionizes business processes across industries.
 
 ## Features
 
@@ -117,15 +121,62 @@ This diagram illustrates how a user's loan application flows through the system.
 
 ## Installation
 
-1.  **Clone the Repository:**
+ **Clone the Repository:**
     ```bash
     git clone [https://github.com/ruslanmv/ai-governance-framework.git](https://github.com/ruslanmv/ai-governance-framework.git)
     cd ai-governance-framework
     ```
-2.  **Install Dependencies:**
-    ```bash
-    pip install -r requirements.txt
-    ```
+
+## Setup Enviroment
+For this project we are going to use python 3.12
+after we have installed anaconda we will do.
+
+```
+python -m venv venv
+source venv/bin/activate  # On macOS/Linux
+venv\Scripts\activate  # On Windows
+pip install -r requirements.txt
+```
+
+![](assets/2025-02-22-11-50-47.png)
+
+Install Ollama using Homebrew.
+
+```
+brew install ollama
+```
+ You can also download the app directly from Ollama. 
+https://ollama.com/download
+
+
+Once you’ve installed Ollama, start the server.
+
+Note: & keeps the service running in the background and can be omitted if preferred.
+
+```
+ollama serve &
+```
+
+## Download the models
+
+Now, let’s download the models. Determining which model to use depends on your needs and what your device can handle. Generally, larger models will produce better results but also require more resources.
+
+In this guide, we’ll fetch both the 2b and 8b models. These are large files and will take some time to download.
+
+
+```
+ollama pull granite3.1-dense:8b
+```
+
+## Run Granite
+
+By default, Ollama runs models with a short context length to avoid preallocating excessive RAM. This can cause long requests to be truncated. To override this when using ollama run, update the num_ctx parameter with /set parameter num_ctx <desired_context_length>. The largest <desired_context_length> supported by Granite 3.1 models is 131072 (128k).
+
+To run the model, type:
+
+```
+ollama run granite3.1-dense:8b
+```
 
 ## Usage
 
@@ -133,8 +184,6 @@ This diagram illustrates how a user's loan application flows through the system.
 
 1.  Run the FastAPI server:
     ```bash
-    @echo off
-    call venv\Scripts\activate
     cd src
     uvicorn server:app --reload
     ```
@@ -155,16 +204,6 @@ This diagram illustrates how a user's loan application flows through the system.
     ```
 2.  Visit `http://localhost:5001` to review and update flagged applications.
 
-### Running Demos:
-
-  * **Main Application Demo (ChatModel & Workflow):**
-    ```bash
-    python src/main.py
-    ```
-  * **ReAct Agents Demo:**
-    ```bash
-    python src/react_agents.py
-    ```
 
 ## Screenshots
 
