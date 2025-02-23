@@ -72,28 +72,28 @@ flowchart TD
     A[User / Client] --> B[Loan Application Interface]
     B --> X[FastAPI Server]
     X --> C[Workflow Engine]
-
+    
     subgraph Governance & Safety Layer
         D1[Safety & Control Agent]
         D2[Ethics & Responsible AI Agent]
         D3[Compliance Agent]
-        D4[Human-AI Collaboration Agent\n(Flags for review)]
+        D4[Human-AI Collaboration Agent\nFlags for review]
     end
-
+    
     C --> D[Governance & Safety Layer]
     D --> D1
     D --> D2
     D --> D3
     D --> D4
-
+    
     C --> E[IBM Granite ChatModel]
     E --> F[Prompt Templates]
     E --> G[Memory Module]
-
+    
     C --> H[ReAct Agent]
-
+    
     E --> I[Decision Output]
-
+    
     D1 -.-> I
     D2 -.-> I
     D3 -.-> I
@@ -101,7 +101,7 @@ flowchart TD
     H --> E
     F --> E
     H --> I
-
+    
     I --> Y[Auditor Dashboard]
 ````
 
