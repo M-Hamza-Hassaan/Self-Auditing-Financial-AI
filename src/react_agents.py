@@ -32,5 +32,6 @@ async def run_react_agent():
     ).observe(observer)
     print("ReAct Agent Response:", result.state)
 
+# For testing purposes
 if __name__ == "__main__":
     asyncio.run(run_react_agent())

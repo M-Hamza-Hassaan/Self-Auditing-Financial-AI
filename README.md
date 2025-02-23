@@ -1,96 +1,99 @@
 # AI Governance Framework
 
-This project addresses the critical challenges posed by modern AI systems: the risks of bias, errors, security threats, ethical dilemmas, and ineffective human-AI collaboration. To mitigate these risks, we introduce the AI Governance Framework, a layered solution deploying specialized Governance & Safety Agents. This framework offers comprehensive, proactive oversight, ensuring AI systems are not only technically robust but also ethically aligned and regulatory compliant. Our unique approach integrates technical safety with ethical, regulatory, and collaborative measures, systematically managing potential risks to build trustworthy AI applications, as demonstrated in our AI-Driven Loan Approval System use case.
+This project addresses the critical challenges posed by modern AI systems: bias, errors, security threats, ethical dilemmas, and ineffective human-AI collaboration. The AI Governance Framework is a layered solution that deploys specialized Governance & Safety Agents to provide comprehensive, proactive oversight. This approach ensures that AI systems are technically robust, ethically aligned, and regulatory compliant. Our AI-Driven Loan Approval System use case demonstrates how to automate and secure loan approvals while enforcing ethical and regulatory standards.
 
 ## Use Case: Self-Auditing Financial AI
-A full-stack solution demonstrating a Trustworthy AI approach built with the BeeAI Framework and IBM Granite models. This project implements a comprehensive Safety and Governance layer to automate and secure the loan approval process while ensuring ethical and regulatory compliance.
+
+Our solution is a full-stack demonstration of a Trustworthy AI approach built with the BeeAI Framework and IBM Granite models. It integrates a comprehensive Safety and Governance layer to automate and secure the loan approval process.
 
 ## Overview
 
-Modern AI systems can transform business operations, but they also introduce risks such as bias, errors, and security vulnerabilities. Our solution tackles these challenges by integrating multiple layers of governance into an AI-driven loan approval system. We leverage IBM Granite models (via the Ollama provider) along with BeeAI’s modular components—including governance agents, prompt templates, memory, workflows, and ReAct agents—to build a system that is:
+Modern AI systems can revolutionize business operations but also introduce risks like bias, errors, and security vulnerabilities. Our solution integrates multiple layers of governance into an AI-driven loan approval system by leveraging:
 
-- **Safe & Controlled:** Monitors for bias and anomalies.
-- **Ethically Aligned:** Ensures decisions adhere to ethical guidelines.
-- **Regulatory Compliant:** Audits decisions against financial and legal standards.
-- **Collaborative:** Enables human oversight to override AI decisions when necessary.
+*   **IBM Granite Models (via Ollama):** For advanced language modeling.
+*   **BeeAI Modular Components:** Including governance agents, prompt templates, memory, workflows, and ReAct agents.
 
-This project was developed for a hackathon challenge with the following key objectives:
-- **Harness IBM Granite Models:** Utilize IBM Granite’s advanced language modeling for business applications.
-- **Focus on Efficiency:** Automate workflows to optimize operations and improve productivity.
-- **Innovate for Impact:** Deliver a groundbreaking solution that revolutionizes business processes in the financial sector.
+The system is designed to be:
+
+*   **Safe & Controlled:** Monitors for bias and anomalies.
+*   **Ethically Aligned:** Ensures decisions adhere to ethical guidelines.
+*   **Regulatory Compliant:** Audits decisions against legal standards using structured outputs.
+*   **Collaborative:** Allows human oversight to override AI decisions when necessary.
+
+### Key Objectives
+
+*   **Harness IBM Granite Models:** Utilize cutting-edge language modeling for business applications.
+*   **Optimize Efficiency:** Automate workflows to enhance productivity.
+*   **Drive Innovation:** Deliver a transformative solution for the financial sector.
 
 ## Features
 
-- **Governance Agents:**  
-  - *SafetyControlAgent*: Monitors loan application data for bias.  
-  - *EthicsAgent*: Reviews decision criteria to ensure ethical fairness.  
-  - *ComplianceAgent*: Audits decisions for regulatory compliance.  
-  - *HumanCollaborationAgent*: Facilitates human review and override when necessary.
-
-- **Prompt Templates:** Dynamically generate prompts using BeeAI’s templating system.
-- **IBM Granite Integration:** Interact with IBM Granite models for high-quality responses.
-- **Memory & Workflows:** Retain conversation history and automate multi-step processes.
-- **ReAct Agents:** Enable intelligent reasoning and actions for dynamic decision making.
-- **Modular Architecture:** Clean, scalable, and well-organized code structure.
+*   **Governance Agents:**
+    *   `SafetyControlAgent`: Monitors loan data for bias.
+    *   `EthicsAgent`: Evaluates loan criteria against ethical guidelines.
+    *   `ComplianceAgent`: Audits decisions for regulatory compliance using structured outputs.
+    *   `HumanCollaborationAgent`: Facilitates human oversight—flagging cases for later review when needed.
+*   **Prompt Templates:** Dynamically generate prompts using BeeAI’s templating system.
+*   **IBM Granite Integration:** Interact with IBM Granite models for high-quality responses.
+*   **Memory & Workflows:** Retain conversation history and automate multi-step processes.
+*   **ReAct Agents:** Enable intelligent reasoning and adaptive decision-making.
+*   **Modular Architecture:** A clean, scalable, and well-organized code structure.
 
 ## File Structure
 
 ```
+
 ai-governance-framework/
-├── README.md
-├── LICENSE
-├── requirements.txt
-├── hackathon_presentation.md
+├── README.md            
+├── LICENSE            
+├── requirements.txt    
+├── hackathon\_presentation.md 
 ├── .gitignore
 ├── docs/
-│   ├── tutorial.md
-│   └── architecture_diagram.png
+│   ├── tutorial.md     
+│   └── architecture\_diagram.md 
+       
 └── src/
-    ├── __init__.py
-    ├── main.py
-    ├── agents.py
-    ├── governance.py
-    ├── prompt_templates.py
-    ├── chat_model_examples.py
-    ├── workflows.py
-    └── react_agents.py
-```
+├── **init**.py   
+├── auditor.py       
+├── server.py        \# FastAPI server for processing loan application submissions.
+├── agents.py        \# Contains all governance agent implementations.
+├── chat.py           \# ChatModel interactions.
+├── workflows.py     \# Workflow definitions for the loan approval process.
+└── react\_agents.py  \# ReAct agent examples.
+└── client.py        \# Flask web app for submitting loan applications.
 
-- **README.md:** Project overview, setup, usage, and other key details.
-- **LICENSE:** Project license (MIT License recommended).
-- **requirements.txt:** Python dependencies.
-- **hackathon_presentation.md:** Pitch and presentation details for the hackathon.
-- **docs/tutorial.md:** Detailed tutorial and documentation.
-- **docs/architecture_diagram.png:** Visual representation of the system architecture.
-- **src/**: Contains all the source code modules.
+````
 
-
-## Architecture
+## Architecture Diagram
 
 ```mermaid
 flowchart TD
     A[User / Client] --> B[Loan Application Interface]
-    B --> C[Workflow Engine]
-    
+    B --> X[FastAPI Server]
+    X --> C[Workflow Engine]
+
     subgraph Governance & Safety Layer
         D1[Safety & Control Agent]
         D2[Ethics & Responsible AI Agent]
         D3[Compliance Agent]
-        D4[Human-AI Collaboration Agent]
+        D4[Human-AI Collaboration Agent\n(Flags for review)]
     end
-    
+
     C --> D[Governance & Safety Layer]
     D --> D1
     D --> D2
     D --> D3
     D --> D4
-    
+
     C --> E[IBM Granite ChatModel]
     E --> F[Prompt Templates]
     E --> G[Memory Module]
+
     C --> H[ReAct Agent]
-    
+
     E --> I[Decision Output]
+
     D1 -.-> I
     D2 -.-> I
     D3 -.-> I
@@ -98,65 +101,90 @@ flowchart TD
     H --> E
     F --> E
     H --> I
-```
 
-This diagram shows how a user's loan application flows through the system, with the Workflow Engine coordinating interactions between the Governance & Safety Layer (which includes the key agents), the IBM Granite ChatModel (enhanced with prompt templates and memory), and the ReAct agent to produce a final decision output.
+    I --> Y[Auditor Dashboard]
+````
 
+This diagram illustrates how a user's loan application flows through the system. The FastAPI Server receives submissions from the Client, and the Workflow Engine coordinates interactions between the Governance & Safety Layer (including Safety, Ethics, Compliance, and Human-AI Collaboration Agents), the IBM Granite ChatModel (using prompt templates and memory), and the ReAct Agent. The final decision output is then sent to an Auditor Dashboard for further review if necessary.
 
 ## Prerequisites
 
-- **Python 3.8+**  
-- **Dependencies:**  
-  Install using:
-
-  ```
-  pip install -r requirements.txt
-  ```
-- **BeeAI Framework:** Ensure that BeeAI and its dependencies are installed.
-- **IBM Granite (Ollama Provider):** Configure your environment for IBM Granite (see [IBM Granite documentation](https://www.ibm.com/granite/docs) for details).
-- **SearXNG (Optional):** For web search integration, have a running SearXNG instance.
+  * **Python 3.12+**
+  * **Dependencies:** Install via: `pip install -r requirements.txt`
+  * **BeeAI Framework:** Ensure BeeAI and its dependencies are installed.
+  * **IBM Granite (Ollama Provider):** Set up your environment as per IBM Granite documentation.
+  * **SearXNG (Optional):** For web search integration, ensure a SearXNG instance is running.
 
 ## Installation
 
-1. **Clone the Repository:**
-
-   ```
-   git clone [https://github.com/ruslanmv/ai-governance-framework.git](https://github.com/ruslanmv/ai-governance-framework.git)
-   ```
-
-   ```
-   cd ai-governance-framework
-   ```
-
-2. **Install Dependencies:**
-
-   ```
-   pip install -r requirements.txt
-   ```
+1.  **Clone the Repository:**
+    ```bash
+    git clone [https://github.com/ruslanmv/ai-governance-framework.git](https://github.com/ruslanmv/ai-governance-framework.git)
+    cd ai-governance-framework
+    ```
+2.  **Install Dependencies:**
+    ```bash
+    pip install -r requirements.txt
+    ```
 
 ## Usage
 
-- **Run the Main Application:**  
-  The main entry point runs both a ChatModel demo and the end-to-end loan approval workflow.
+### Server-Side Pipeline:
 
-```
-  python src/main.py
-```
+1.  Run the FastAPI server:
+    ```bash
+    @echo off
+    call venv\Scripts\activate
+    cd src
+    uvicorn server:app --reload
+    ```
 
-- **Interactive Workflow:**  
+### Client Portal:
 
-    During execution, the system will prompt for human review input when necessary (simulate human oversight).
+1.  Launch the Flask client:
+    ```bash
+    python src/client.py
+    ```
+2.  Submit loan applications through the web interface.
 
-- **Test ReAct Agents:**  
-  To run the ReAct agent demonstration separately:
+### Auditor Dashboard:
 
-  ```
-  python src/react_agents.py
-  ```
+1.  Run the auditor app:
+    ```bash
+    python auditor.py
+    ```
+2.  Visit `http://localhost:5001` to review and update flagged applications.
+
+### Running Demos:
+
+  * **Main Application Demo (ChatModel & Workflow):**
+    ```bash
+    python src/main.py
+    ```
+  * **ReAct Agents Demo:**
+    ```bash
+    python src/react_agents.py
+    ```
+
+## Screenshots
+
+### Application Portal
+
+![Application Portal - Part 1](assets/2025-02-23-00-53-11.png)
+
+![Application Portal - Part 2](assets/2025-02-23-00-54-50.png)
+
+### Auditor Dashboard
+
+![Auditor Dashboard - Part 1](assets/2025-02-23-00-59-11.png)
+
+![Auditor Dashboard - Part 2](assets/2025-02-23-00-59-23.png)
+
+![Auditor Dashboard - Part 3](assets/2025-02-23-00-59-48.png)
 
 ## Contributing
 
-Contributions are welcome! Feel free to fork the repository and submit pull requests. For major changes, please open an issue first to discuss your ideas.
+Contributions are welcome\! Please fork the repository and submit pull requests. For major changes, open an issue first to discuss your ideas.
 
 ## License
 
@@ -164,4 +192,7 @@ This project is licensed under the MIT License. See the [LICENSE](LICENSE) file 
 
 ## Acknowledgements
 
-We thank our contributors, the BeeAI community, and IBM Granite for providing the powerful tools that made this project possible. Special thanks to everyone who supported this hackathon initiative.
+We gratefully acknowledge our contributors, the BeeAI community, and IBM Granite for the robust tools that made this project possible. Special thanks to everyone who supported this hackathon initiative.
+
+Happy coding and building trustworthy AI systems\!
+
