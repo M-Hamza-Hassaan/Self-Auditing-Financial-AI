@@ -1,6 +1,5 @@
 # workflows.py
 # Contains implementations of workflows for our loan approval system and web search agent.
-
 import traceback
 from pydantic import BaseModel, ValidationError
 from beeai_framework.workflows.workflow import Workflow, WorkflowError
