@@ -1,1 +1,4 @@
 /backup
+/venv
+/src/__pycache__
+src/loan_decisions.json

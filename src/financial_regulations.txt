@@ -1,0 +1,44 @@
+Acme Bank - Financial Regulations
+
+This document outlines key financial regulations that Acme Bank must comply with when making loan decisions. Compliance with these regulations is mandatory and ensures fair, ethical, and legal lending practices.
+
+1. Consumer Protection Law - Regulation CF123
+
+Description: This regulation protects consumers in financial transactions, ensuring they are treated fairly and transparently.
+Rules:
+Rule 1.1: Provide clear and understandable loan terms and conditions to consumers before they agree to the loan. This includes the total amount borrowed, the interest rate, the repayment schedule, and any other relevant terms.
+Rule 1.2: Disclose all fees and charges associated with the loan in a transparent and upfront manner. Hidden fees are strictly prohibited.
+Rule 1.3: Financial institutions must assess the consumer's ability to repay the loan before approval. Loans should not be granted if there is a high likelihood of the consumer defaulting, to prevent predatory lending practices.
+Rule 1.4: Establish clear and accessible procedures for consumers to resolve disputes or complaints related to their loans. These procedures must be fair and efficient.
+Rule 1.5: Protect consumer's personal and financial information diligently and in compliance with all applicable data privacy laws and regulations. Data security is paramount.
+
+2. Anti-Discrimination Act - Regulation ADA456
+
+Description: This act prohibits discrimination in lending based on protected characteristics. It ensures equal access to credit for all qualified applicants, regardless of their personal attributes.
+Protected Characteristics: Race, color, religion, national origin, sex, marital status, age, or receipt of public assistance.
+Rules:
+Rule 2.1: Loan application processes must be designed to be unbiased and must not discriminate, directly or indirectly, against any individual or group based on protected characteristics.
+Rule 2.2: Avoid using loan criteria or algorithms that, while seemingly neutral, have a disparate impact on protected groups. If a criterion does have a disparate impact, it must be demonstrably justified by a clear and business necessity and no less discriminatory alternatives must exist.
+Rule 2.3: All staff involved in the loan process, from application intake to approval and servicing, must receive comprehensive training on anti-discrimination laws and fair lending practices.
+Rule 2.4: Implement ongoing monitoring of lending practices to actively detect signs of discrimination, including redlining or disparate treatment. Establish clear protocols for taking immediate corrective action if discriminatory practices are identified.
+Rule 2.5: Thoroughly document and justify every loan decision, especially those that involve rejection or less favorable terms. Be prepared to explain the rationale behind any decision that may appear to have a disparate impact on a protected group.
+
+3. Bank Secrecy Act - Regulation BSA789
+
+Description: This act focuses on preventing financial institutions from being used for money laundering and terrorist financing.
+Rules:
+Rule 3.1: Implement robust Know Your Customer (KYC) procedures to thoroughly verify the identity of all customers opening accounts or applying for loans.
+Rule 3.2: Continuously monitor customer transactions for any suspicious activity that could be indicative of money laundering or terrorist financing. Establish thresholds and triggers for automated alerts and manual review.
+Rule 3.3: Report any detected suspicious activities, including large or unusual transactions, or transactions involving high-risk individuals or entities, to the Financial Crimes Enforcement Network (FinCEN) as legally mandated.
+Rule 3.4: Maintain detailed and auditable records of all customer transactions and KYC documentation for the periods mandated by law.
+Rule 3.5: Fully cooperate with law enforcement and regulatory investigations related to suspected financial crimes, providing all necessary information and assistance in a timely manner.
+
+4. Truth in Lending Act - Regulation TILA101
+
+Description: TILA promotes informed credit usage by requiring lenders to provide consumers with meaningful disclosures about the terms and costs of credit.
+Rules:
+Rule 4.1: Clearly and conspicuously disclose the Annual Percentage Rate (APR) for all loan products in advertising, applications, and loan agreements. The APR must reflect the true cost of borrowing.
+Rule 4.2: Provide consumers with a comprehensive loan cost estimate before loan consummation. This estimate must include all finance charges, such as interest, fees, and other costs associated with the loan.
+Rule 4.3: For certain types of loans, particularly home equity loans, offer consumers a right of rescission. This allows borrowers a cooling-off period to cancel the loan after signing if they reconsider.
+Rule 4.4: Ensure all advertising and marketing materials for credit products are truthful and not misleading in any way. Avoid deceptive practices or highlighting benefits while obscuring risks or costs.
+Rule 4.5: Provide all required disclosures to consumers in a clear, concise, and understandable format, using plain language. Disclosures must be easily accessible and not buried in fine print.

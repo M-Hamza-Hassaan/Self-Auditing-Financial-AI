@@ -1,0 +1,204 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Acme Bank Auditor Portal</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #e0f7fa; /* Light Cyan background */
+            color: #004d40; /* Teal Darken-3 text color */
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+        }
+        .container {
+            background-color: #ffffff; /* White container background */
+            padding: 40px;
+            border-radius: 12px; /* Rounded corners */
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1); /* Softer shadow */
+            width: 700px;
+            max-width: 95%;
+            box-sizing: border-box;
+        }
+        h2 {
+            text-align: center;
+            color: #00796b; /* Teal color for heading */
+            margin-bottom: 25px;
+            font-weight: bold;
+            font-size: 2.2em;
+        }
+        h3 {
+            text-align: center;
+            color: #0056b3; /* Dark blue for subheadings */
+            margin-bottom: 20px;
+        }
+        label {
+            font-weight: 600; /* Semi-bold label */
+            display: block;
+            margin-top: 20px;
+            color: #26a69a; /* Teal Lighten-1 label color */
+        }
+        input[type="text"],
+        input[type="number"],
+        textarea,
+        select {
+            width: 100%;
+            padding: 12px;
+            margin-top: 8px;
+            border: 1px solid #b2dfdb; /* Teal Lighten-4 border */
+            border-radius: 6px;
+            box-sizing: border-box;
+            font-size: 1em;
+            color: #37474f; /* Blue Grey Darken-3 text input color */
+            transition: border-color 0.3s ease;
+        }
+        input[type="text"]:focus,
+        input[type="number"]:focus,
+        textarea:focus,
+        select:focus {
+            border-color: #00bfa5; /* Teal Accent-4 focus border */
+            outline: none;
+            box-shadow: 0 0 0 2px rgba(0, 191, 165, 0.2); /* Focus ring */
+        }
+        textarea {
+            resize: vertical;
+            min-height: 120px;
+        }
+        input[type="submit"] {
+            background-color: #009688; /* Teal color for buttons */
+            color: white;
+            border: none;
+            padding: 14px 24px;
+            border-radius: 6px;
+            cursor: pointer;
+            margin-top: 30px;
+            width: 100%;
+            font-size: 1.1em;
+            font-weight: 500;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+            transition: background-color 0.3s ease, transform 0.2s ease;
+        }
+        input[type="submit"]:hover {
+            background-color: #00796b; /* Darker Teal on hover */
+            transform: translateY(-2px);
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.25);
+        }
+        .flash {
+            padding: 15px;
+            margin-bottom: 20px;
+            border-radius: 6px;
+        }
+        .flash.success {
+            background-color: #d4edda; /* Green success flash */
+            color: #155724;
+            border: 1px solid #c3e6cb;
+        }
+        .flash.error {
+            background-color: #f8d7da; /* Red error flash */
+            color: #721c24;
+            border: 1px solid #f5c6cb;
+        }
+        .flash.warning {
+            background-color: #ffe0b2; /* Light Orange background for warning */
+            color: #ff6f00;
+            border: 1px solid #ffb300;
+        }
+        .form-buttons {
+            display: flex;
+            justify-content: center;
+        }
+        .form-buttons input[type="submit"] {
+            width: 100%;
+            margin-top: 20px;
+        }
+        a {
+            color: #007bff;
+            text-decoration: none;
+        }
+        a:hover {
+            text-decoration: underline;
+        }
+        ul {
+            list-style-type: none;
+            padding-left: 0;
+        }
+        li {
+            margin-bottom: 10px;
+            padding: 10px;
+            background-color: #f8f9fa;
+            border: 1px solid #ced4da;
+            border-radius: 6px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h2>Acme Bank Auditor Portal</h2>
+        {% with messages = get_flashed_messages(with_categories=true) %}
+            {% if messages %}
+                {% for category, message in messages %}
+                    <div class="flash {{ category }}">{{ message }}</div>
+                {% endfor %}
+            {% endif %}
+        {% endwith %}
+
+        {% if page == 'dashboard' %}
+            <h3>Dashboard</h3>
+            <p>Number of applications pending review: <strong>{{ pending_count }}</strong></p>
+            <p style="text-align: center;"><a href="{{ url_for('review_list') }}">View Pending Reviews</a></p>
+        
+        {% elif page == 'review_list' %}
+            <h3>Applications Pending Review</h3>
+            {% if reviews %}
+                <ul>
+                    {% for review in reviews %}
+                        <li>
+                            <strong>Applicant ID:</strong> {{ review.applicant_id }}<br>
+                            <strong>Demographic:</strong> {{ review.demographic }}<br>
+                            <a href="{{ url_for('review_detail', applicant_id=review.applicant_id) }}">Review Application</a>
+                        </li>
+                    {% endfor %}
+                </ul>
+            {% else %}
+                <p>No applications pending review.</p>
+            {% endif %}
+            <p style="text-align: center;"><a href="{{ url_for('dashboard') }}">Back to Dashboard</a></p>
+        
+        {% elif page == 'review_detail' %}
+            <h3>Review Application - Applicant ID: {{ review.applicant_id }}</h3>
+            <p><strong>Demographic:</strong> {{ review.demographic }}</p>
+            <p><strong>Loan Status:</strong> {{ review.loan_status }}</p>
+            <p><strong>Risk Flag:</strong> {{ review.risk_flag }}</p>
+            <p><strong>Loan Criteria:</strong> {{ review.loan_criteria | join(', ') }}</p>
+            <p><strong>Ethics Review:</strong> {{ review.ethics_review }}</p>
+            <p><strong>Compliance Report:</strong> {{ review.compliance_report }}</p>
+            <p><strong>Final Decision:</strong> {{ review.final_decision }}</p>
+            {% if review.auditor_comments %}
+                <p><strong>Auditor Comments:</strong> {{ review.auditor_comments }}</p>
+            {% endif %}
+
+            <form method="post" action="{{ url_for('review_detail', applicant_id=review.applicant_id) }}">
+                <label for="final_decision">Update Final Decision:</label>
+                <select id="final_decision" name="final_decision" required>
+                    <option value="">Select decision</option>
+                    <option value="approved">Approve</option>
+                    <option value="rejected">Reject</option>
+                </select>
+                
+                <label for="auditor_comments">Additional Reasons / Comments:</label>
+                <textarea id="auditor_comments" name="auditor_comments" placeholder="Enter additional comments (optional)"></textarea>
+                
+                <div class="form-buttons">
+                    <input type="submit" value="Submit Decision">
+                </div>
+            </form>
+            <p style="text-align: center;"><a href="{{ url_for('review_list') }}">Back to Review List</a></p>
+        {% endif %}
+    </div>
+</body>
+</html>
