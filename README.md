@@ -188,6 +188,10 @@ ollama run granite3.1-dense:8b
     uvicorn server:app --reload
     ```
 
+For the client and auditor we enter to the source directory
+    ```
+    cd src
+    ```
 ### Client Portal:
 
 1.  Launch the Flask client:
