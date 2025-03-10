@@ -132,9 +132,9 @@ For this project we are going to use python 3.12
 after we have installed anaconda we will do.
 
 ```
-python -m venv venv
-source venv/bin/activate  # On macOS/Linux
-venv\Scripts\activate  # On Windows
+python -m venv .venv
+source .venv/bin/activate  # On macOS/Linux
+.venv\Scripts\activate  # On Windows
 pip install -r requirements.txt
 ```
 
