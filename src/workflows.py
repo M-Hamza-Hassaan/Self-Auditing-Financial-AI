@@ -1,12 +1,3 @@
-<<<<<<< HEAD
-# workflows.py
-# Contains implementations of workflows for our loan approval system and web search agent.
-import traceback
-from pydantic import BaseModel, ValidationError
-from beeai_framework.workflows.workflow import Workflow, WorkflowError
-from beeai_framework.backend.message import UserMessage
-from agents import SafetyControlAgent, HumanCollaborationAgent
-=======
 import asyncio
 import json
 from agents import SafetyControlAgent, EthicsAgent, ComplianceAgent, HumanCollaborationAgent
@@ -27,7 +18,6 @@ async def run_loan_approval_workflow(processed_submission: dict):
     # Create a copy of the processed submission and set defaults.
     loan_application = processed_submission.copy()
     loan_application.setdefault("loan_criteria", ["Standard Risk Assessment", "Income Verification"])
->>>>>>> 6d3a935613b9308dec655f387bb53cd4da99e253
 
     # Run Safety Control Agent with LLM evaluation for bias detection.
     safety_agent = SafetyControlAgent()

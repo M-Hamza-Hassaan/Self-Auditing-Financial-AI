@@ -61,10 +61,13 @@ class SafetyControlAgent:
 
 # ================= EthicsAgent =================
 # Load Acme Bank's ethical guidelines from file.
-current_directory = os.getcwd()
-full_ethics_path = os.path.join(current_directory, "acme_bank_ethics_guidelines.txt")
+
+base_dir = os.path.dirname(os.path.abspath(__file__))  # gets the path to src/
+full_ethics_path = os.path.join(base_dir, "acme_bank_ethics_guidelines.txt")
+
 with open(full_ethics_path, "r") as f:
     acme_ethics_context = f.read()
+
 
 EthicsAgent_prompt = f"""You are an Ethics Agent for Acme Bank. Your role is to evaluate loan applications against **Acme Bank's ethical guidelines** to ensure they align with our company's ethical standards.
 
